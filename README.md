@@ -62,7 +62,8 @@ CDK will store state and configuration in the .minishift sub-directory of the us
 
  
 
-2. Setup CDK/Minishift   5 minutes
+# 2. Setup CDK/Minishift   
+5 minutes
 The CDK download is a single executable which includes a number of bundled components. You will use the minishift command to start, stop, and configure the Red Hat Enterprise Linux 7 VM and the Red Hat OpenShift Container Platform single-node cluster running inside of the VM. To run minishift commands, you will need to move the minishift download to a directory that is in your command search path.
 
 The oc command line tool which is used for interacting with OpenShift clusters will be downloaded when you run minishift setup-cdk. The oc command must match the version of OpenShift running inside of the VM.  The minishift oc-env command provides the statements to add the correct version of oc to your PATH. The output of minishift oc-env shows the commands to use in your shell to dynamically update the environment after running minishift oc-env.
@@ -76,13 +77,13 @@ Setup
 Adding minishift to your path
 The cdk-minishift-* file you downloaded in the first step is an executable. To run minishift commands, copy it to a directory that is in already in your PATH, or create a directory and add it to the PATH environment variable. The directory must be on your system (C:) drive. When copying, rename the downloaded file to minishift.exe.
 
-For cmd.exe
+# cmd.exe
 
 C:\> mkdir %USERPROFILE%/bin
 C:\> copy %USERPROFILE/Downloads/cdk-3.4.0-2-minishift* %USERPROFILE%/bin/minishift.ex
  
 
-For PowerSHell
+# PowerSHell
 
 PS C:\> mkdir $env:USERPROFILE/bin
 PS C:\> copy $env:USERPROFILE/Downloads/cdk-3.4.0-2-minishift* $env:USERPROFILE/bin/minishift.exe
@@ -113,7 +114,7 @@ The VM will need to register with Red Hat to download and build container images
 
 The following commands will set the credentials in the environment of the running shell. When a new command shell is started you will need to enter these commands again.
 
-For cmd.exe
+# cmd.exe
 C:\> set MINISHIFT_USERNAME <RED_HAT_USERNAME>
 C:\> set MINISHIFT_PASSWORD <RED_HAT_PASSWORD>
 For PowerShell
@@ -189,12 +190,12 @@ After the CDK/minishift VM has been started, add oc to your path:
 
 Note: The oc command must match the version of the OpenShift cluster that is running inside of the Red Hat VM. The following commands will set the correct version dynamically by running minishift oc-env and having your shell parse the output.
 
-For cmd.exe:
+# cmd.exe:
 
 C:\> @FOR /f "tokens=*" %i IN ('minishift oc-env') DO @call %i
  
 
-For PowerShell:
+# PowerShell:
 
 PS C:\> & minishift oc-env | Invoke-Expression
  
@@ -222,9 +223,3 @@ Follow these instructions to create and deploy a Node.js "Hello, World" applicat
 
  
 
-Where to go next?
-Learn more about CDK from the CDK Getting Started Guide
-If you are new to OpenShift, try the online tutorials at learn.openshift.com
-Read the OpenShift documentation
-Follow the Red Hat Developers Blog for articles on OpenShift, CDK, containers, and many other topics.
- 
