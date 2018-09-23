@@ -1,5 +1,5 @@
-# rhcl-i
-redhat dev installation
+# RHCL_I
+RedHat Developers Installation
 
 Prerequisites for running CDK
 The prerequisites for running CDK are:
